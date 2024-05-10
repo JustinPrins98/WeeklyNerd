@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body {
+    background-color: var(--background);
+    height: 100vh;
+}
+
+/*******************/
+/**** Properties ***/
+/*******************/
+
+:root {
+    --background: rgb(245, 255, 233);
+    --navtextcolor: black;
+}
+
+/*******************/
+/* Styling classes */
+/*******************/
+
+.italic {
+    font-style: italic;
+}
+
+/**************/
+/*** Header ***/
+/**************/
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    padding: 1em;
+    background-image: linear-gradient(0deg, var(--background), black);
+
+
+    a {
+        color: var(--navtextcolor);
+        font-size: 1.2em;
+
+        &:hover {
+            color: red;
+        }
+
+        &:active {
+            color: purple;
+        }
+
+        &:focus-visible {
+            color: black;
+        }
+    }
+
+    div {
+        display: flex;
+        gap: 1em;
+    }
+}
+
+h1 {
+    text-align: center;
+}
+
+header {
+
+    margin-bottom: 2em;
+
+    p:nth-of-type(1) {
+        text-align: center;
+    }
+
+    p:nth-of-type(2) {
+        max-width: 75ch;
+        margin: auto;
+
+        @media screen and (max-width: 414px) {
+            max-width: 40ch;
+        }
+    }
+}
+
+/********/
+/* MAIN */
+/********/
+
+
+
+.main-grid-wrapper {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+
+    a {
+        color: red;
+        background-color: black;
+        padding: 3em 3em;
+        border-radius: 8px;
+        width: 50%;
+        margin: auto;
+
+    }
+}
+
+/**********/
+/* FOOTER */
+/**********/
+
+footer {
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+
+    p {
+        text-align: left;
+        margin: auto;
+        max-width: 75ch;
+    }
+
+    .flex-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 12em;
+    }
+}
