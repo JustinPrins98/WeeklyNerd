@@ -1,7 +1,9 @@
 * {
     margin: 0;
-    font-family: sans-serif;
+    font-family: "Montserrat", sans-serif;
+    ;
 }
+
 
 a {
     text-decoration: none;
@@ -18,8 +20,10 @@ body {
 /*******************/
 
 :root {
-    --background: rgb(245, 255, 233);
+    --background: white;
     --navtextcolor: black;
+    --head-font: "Barlow Condensed", sans-serif;
+    --paragraph-font: "Montserrat", sans-serif;
 }
 
 /*******************/
@@ -34,12 +38,23 @@ body {
 /*** Header ***/
 /**************/
 
+
+
+.img-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: -5em 0 -5em 0;
+}
+
+.img-wrapper img {
+    transform: scale(.9);
+}
+
 nav {
     display: flex;
     justify-content: space-between;
-    gap: 1em;
-    padding: 1em;
-    background-image: linear-gradient(0deg, var(--background), black);
+    padding: 1.5rem 3rem;
+
 
 
     a {
@@ -51,7 +66,8 @@ nav {
         }
 
         &:active {
-            color: purple;
+            filter: blur(500px);
+            transition: 1s;
         }
 
         &:focus-visible {
@@ -61,12 +77,20 @@ nav {
 
     div {
         display: flex;
-        gap: 1em;
+        gap: 3rem;
     }
 }
 
 h1 {
     text-align: center;
+    font-family: var(--head-font);
+    font-size: 5.8em;
+    line-height: 1em;
+    margin: 0 0 .25em 0;
+}
+
+.my-name {
+    margin: 0 0 1em 0;
 }
 
 header {
@@ -96,13 +120,12 @@ header {
 .main-grid-wrapper {
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 1em;
-    grid-row-gap: 1em;
+    grid-row-gap: 2em;
+    padding: 2em 0;
 
     a {
-        color: red;
-        background-color: black;
+        color: rgb(238, 238, 238);
+        background-color: rgb(17, 105, 150);
         padding: 3em 3em;
         border-radius: 8px;
         width: 50%;
@@ -116,8 +139,7 @@ header {
 /**********/
 
 footer {
-    position: absolute;
-    bottom: 0;
+    margin-top: 3em;
     background-color: white;
     width: 100%;
 
@@ -131,5 +153,6 @@ footer {
         display: flex;
         justify-content: center;
         gap: 12em;
+        padding: 2em;
     }
 }
