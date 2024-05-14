@@ -38,7 +38,9 @@ body {
 /*** Header ***/
 /**************/
 
-
+/**********/
+/** Bril **/
+/**********/
 
 .img-wrapper {
     display: flex;
@@ -47,8 +49,35 @@ body {
 }
 
 .img-wrapper img {
-    transform: scale(.9);
+    transform: scale(0.9);
+    animation: wiggle 4s infinite;
+    /* Adjusted animation duration to include the delay */
 }
+
+@keyframes wiggle {
+
+    10%,
+    100% {
+        transform: rotate(0deg) scale(0.9);
+    }
+
+    20% {
+        transform: rotate(12.5deg) scale(0.9);
+    }
+
+    30% {
+        transform: rotate(0deg) scale(.9);
+    }
+
+    80% {
+        transform: rotate(0deg) scale(.9);
+    }
+
+    90% {
+        transform: rotate(-12.5deg) scale(.9);
+    }
+}
+
 
 nav {
     display: flex;
@@ -131,6 +160,26 @@ header {
         width: 50%;
         margin: auto;
 
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: scroll()) {
+        #Kilian-Valkhof {
+            animation: appear linear both;
+            animation-timeline: view();
+            animation-range: contain;
+        }
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 100%;
     }
 }
 
