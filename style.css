@@ -138,12 +138,37 @@ header {
             max-width: 40ch;
         }
     }
+
+    p:nth-of-type(3) {
+        text-align: center;
+        font-size: 3em;
+        color: rgb(153, 153, 153);
+        animation: up-down 3s infinite ease-in-out;
+        margin: 1em 0 0 0;
+    }
+}
+
+@keyframes up-down {
+    0% {
+        transform: translateY(0) rotate(90deg);
+    }
+
+    50% {
+        transform: translateY(.5em) rotate(90deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(90deg);
+    }
+
 }
 
 /********/
 /* MAIN */
 /********/
-
+html {
+    overflow-x: hidden;
+}
 
 
 .main-grid-wrapper {
@@ -151,6 +176,9 @@ header {
     display: grid;
     grid-row-gap: 2em;
     padding: 2em 0;
+    width: 100%;
+
+
 
     a {
         color: rgb(238, 238, 238);
@@ -165,20 +193,56 @@ header {
 
 @media (prefers-reduced-motion: no-preference) {
     @supports (animation-timeline: scroll()) {
-        #Kilian-Valkhof {
-            animation: appear linear both;
+        .main-grid-wrapper a:nth-of-type(odd) {
+            animation: appear-left linear both;
             animation-timeline: view();
-            animation-range: contain;
+            animation-range: 0% 80%;
+        }
+
+        .main-grid-wrapper a:nth-of-type(even) {
+            animation: appear-right linear both;
+            animation-timeline: view();
+            animation-range: 0% 80%;
         }
     }
 }
 
-@keyframes appear {
+@keyframes appear-left {
     0% {
+        transform: translate(-150%);
         opacity: 0;
     }
 
+    15% {
+        transform: translate(-50%);
+    }
+
+    25% {
+        transform: translate(-25%);
+    }
+
     50% {
+        transform: translate(0);
+        opacity: 100%;
+    }
+}
+
+@keyframes appear-right {
+    0% {
+        transform: translate(150%);
+        opacity: 0;
+    }
+
+    15% {
+        transform: translate(50%);
+    }
+
+    25% {
+        transform: translate(25%);
+    }
+
+    50% {
+        transform: translate(0);
         opacity: 100%;
     }
 }
@@ -203,5 +267,17 @@ footer {
         justify-content: center;
         gap: 12em;
         padding: 2em;
+
+        .socials-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: .6em;
+        }
+
+        img {
+            width: 4em;
+        }
     }
 }
