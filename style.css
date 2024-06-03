@@ -34,6 +34,10 @@ body {
     font-style: italic;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 /**************/
 /*** Header ***/
 /**************/
@@ -183,13 +187,57 @@ html {
     a {
         color: rgb(238, 238, 238);
         background-color: rgb(17, 105, 150);
-        padding: 3em 3em;
+        padding: 4em 3em;
         border-radius: 8px;
         width: 50%;
         margin: auto;
+        transition: .2s;
 
+        &:hover {
+            background-color: rgb(9, 57, 81);
+        }
+
+        .main-link-styling {
+            position: absolute;
+            width: 12em;
+            height: .1em;
+
+            top: 3.4em;
+            left: 1.2em;
+            background-color: rgb(44, 44, 71);
+        }
+
+        h2 {
+            position: absolute;
+            top: .8em;
+            left: .8em;
+        }
+
+        .work {
+            position: absolute;
+            left: 1.2em;
+            top: 4em;
+        }
+
+        .work-function {
+            position: absolute;
+            left: 1.2em;
+            top: 5.5em;
+        }
+
+        img {
+            display: inline;
+            position: absolute;
+            object-fit: cover;
+            width: 6.5em;
+            height: 6.5em;
+            top: .75em;
+            right: 1em;
+            border-radius: 3px;
+        }
     }
 }
+
 
 @media (prefers-reduced-motion: no-preference) {
     @supports (animation-timeline: scroll()) {
